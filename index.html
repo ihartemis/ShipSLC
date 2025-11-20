@@ -1,12 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ShipSLC - Build, Learn, Ship.</title>
-    <!-- Favicon: SVG with Brand Gradient and Mountain Icon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%236D28D9'/%3E%3Cstop offset='50%25' stop-color='%23C026D3'/%3E%3Cstop offset='100%25' stop-color='%23F59E0B'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='6' fill='url(%23g)'/%3E%3Cg transform='translate(4, 4)'%3E%3Cpath d='m8 3 4 8 5-5 5 15H2L8 3z' fill='none' stroke='white' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/g%3E%3C/svg%3E">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='brand' x1='0' y1='0' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%236D28D9'/%3E%3Cstop offset='50%25' stop-color='%23C026D3'/%3E%3Cstop offset='100%25' stop-color='%23F59E0B'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='8' fill='url(%23brand)'/%3E%3Cpath d='m10.6 6 5.3 10.6 6.6-6.6 6.6 20H2.6L10.6 6z' transform='scale(0.75) translate(5,2)' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -120,34 +118,19 @@
       .bg-grid-slate-100 {
         background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='rgb(241 245 249 / 0.8)'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e");
       }
+      /* Dark Mode Grid - Made Subtle (3% opacity white) */
       .dark .bg-grid-slate-900 {
-        /* Reduced intensity from 0.3 dark blue to 0.03 white for subtle effect */
-        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='rgb(255 255 255 / 0.03)'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e");
-      }
-
-      /* Mountain Gradient Theme Switching */
-      .mountain-back { fill: url(#grad-back); }
-      .mountain-mid { fill: url(#grad-mid); }
-      .mountain-front { fill: url(#grad-front); }
-      
-      @media (prefers-color-scheme: dark) {
-        .mountain-back { fill: url(#grad-back-dark); }
-        .mountain-mid { fill: url(#grad-mid-dark); }
-        .mountain-front { fill: url(#grad-front-dark); }
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='rgba(255, 255, 255, 0.03)'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e");
       }
     </style>
-  <script type="importmap">
+<script type="importmap">
 {
   "imports": {
-    "react/": "https://aistudiocdn.com/react@^19.2.0/",
     "react": "https://aistudiocdn.com/react@^19.2.0",
-    "react-router-dom": "https://aistudiocdn.com/react-router-dom@^7.9.6",
-    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0",
     "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
-    "@vercel/analytics/react": "https://esm.sh/@vercel/analytics@1.5.0/react?external=react,react-dom",
-    "@vercel/analytics/": "https://aistudiocdn.com/@vercel/analytics@^1.5.0/",
-    "@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^5.1.1",
-    "vite": "https://aistudiocdn.com/vite@^7.2.4"
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0",
+    "react-router-dom": "https://aistudiocdn.com/react-router-dom@^7.9.6"
   }
 }
 </script>
@@ -157,4 +140,3 @@
     <script type="module" src="./index.tsx"></script>
   </body>
 </html>
-    
