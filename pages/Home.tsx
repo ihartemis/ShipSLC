@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Zap, Users, ExternalLink, Calendar, Sparkles } from 'lucide-react';
@@ -14,6 +15,7 @@ const WasatchHero = () => (
       className="w-full h-full"
     >
       <defs>
+        {/* --- LIGHT MODE GRADIENTS --- */}
         {/* Back Layer Gradient - Atmospheric Distance */}
         <linearGradient id="grad-back" x1="0%" y1="0%" x2="100%" y2="0%">
            <stop offset="0%" stopColor="#6D28D9" stopOpacity="0.1">
@@ -41,25 +43,52 @@ const WasatchHero = () => (
            </stop>
            <stop offset="100%" stopColor="#6D28D9" stopOpacity="0.95" />
         </linearGradient>
+
+        {/* --- DARK MODE GRADIENTS --- */}
+        {/* Back Layer Dark - Subtle Violet Glow */}
+        <linearGradient id="grad-back-dark" x1="0%" y1="0%" x2="100%" y2="0%">
+           <stop offset="0%" stopColor="#8B5CF6" stopOpacity="0.05"> 
+             <animate attributeName="stop-opacity" values="0.05;0.15;0.05" dur="6s" repeatCount="indefinite" />
+           </stop>
+           <stop offset="100%" stopColor="#D946EF" stopOpacity="0.1">
+             <animate attributeName="stop-color" values="#D946EF;#F0ABFC;#D946EF" dur="8s" repeatCount="indefinite" />
+           </stop>
+        </linearGradient>
+
+        {/* Mid Layer Dark - Glowing Ridge (Cyberpunk feel) */}
+        <linearGradient id="grad-mid-dark" x1="0%" y1="0%" x2="0%" y2="100%">
+           <stop offset="0%" stopColor="#A21CAF" stopOpacity="0.4">
+              {/* Fuchsia to Deep Amber */}
+              <animate attributeName="stop-color" values="#A21CAF;#B45309;#A21CAF" dur="7s" repeatCount="indefinite" />
+           </stop>
+           <stop offset="100%" stopColor="#4C1D95" stopOpacity="0.6" />
+        </linearGradient>
+
+         {/* Front Layer Dark - Deep Silhouette into Void */}
+         <linearGradient id="grad-front-dark" x1="50%" y1="0%" x2="50%" y2="100%">
+           <stop offset="0%" stopColor="#312E81" stopOpacity="0.8"> 
+              <animate attributeName="stop-color" values="#312E81;#4338ca;#312E81" dur="10s" repeatCount="indefinite" />
+           </stop>
+           <stop offset="100%" stopColor="#111827" stopOpacity="0.95" /> 
+        </linearGradient>
       </defs>
       
-      {/* Back Layer - High Peaks (Timpanogos style) */}
+      {/* Back Layer - High Peaks */}
       <path 
         d="M0,400 L0,250 L180,180 L350,260 L520,140 L750,240 L950,120 L1150,200 L1320,150 L1440,220 V400 Z" 
-        fill="url(#grad-back)" 
+        className="mountain-back transition-all duration-500"
       />
 
       {/* Mid Layer - Rugged Ridge Line */}
       <path 
         d="M-50,400 L-50,300 L150,240 L300,310 L480,220 L620,290 L800,180 L980,280 L1150,200 L1300,290 L1490,250 V400 Z" 
-        fill="url(#grad-mid)" 
-        className="opacity-90"
+        className="mountain-mid opacity-90 transition-all duration-500"
       />
 
-      {/* Front Layer - The Foothills / Closer Range */}
+      {/* Front Layer - The Foothills */}
       <path 
         d="M0,400 L0,350 L120,310 L250,360 L420,280 L580,340 L720,260 L900,350 L1050,290 L1220,360 L1350,300 L1440,340 V400 Z" 
-        fill="url(#grad-front)" 
+        className="mountain-front transition-all duration-500"
       />
     </svg>
   </div>
@@ -105,7 +134,7 @@ const Home: React.FC = () => {
             
             {/* Subheadline */}
             <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-10 leading-relaxed max-w-2xl mx-auto animate-fade-in delay-300">
-              The community for product builders in Salt Lake City. Connect with founders, engineers, and designers. No fluff, just people making cool stuff.
+              The community for product builders in Salt Lake City. Connect with founders, engineers, and designers.
             </p>
             
             {/* CTAs */}

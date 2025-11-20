@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -118,7 +119,19 @@
         background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='rgb(241 245 249 / 0.8)'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e");
       }
       .dark .bg-grid-slate-900 {
-        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='rgb(15 23 42 / 0.3)'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e");
+        /* Reduced intensity from 0.3 dark blue to 0.03 white for subtle effect */
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='rgb(255 255 255 / 0.03)'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e");
+      }
+
+      /* Mountain Gradient Theme Switching */
+      .mountain-back { fill: url(#grad-back); }
+      .mountain-mid { fill: url(#grad-mid); }
+      .mountain-front { fill: url(#grad-front); }
+      
+      @media (prefers-color-scheme: dark) {
+        .mountain-back { fill: url(#grad-back-dark); }
+        .mountain-mid { fill: url(#grad-mid-dark); }
+        .mountain-front { fill: url(#grad-front-dark); }
       }
     </style>
   <script type="importmap">
@@ -130,7 +143,9 @@
     "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0",
     "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
     "@vercel/analytics/react": "https://esm.sh/@vercel/analytics@1.5.0/react?external=react,react-dom",
-    "@vercel/analytics/": "https://aistudiocdn.com/@vercel/analytics@^1.5.0/"
+    "@vercel/analytics/": "https://aistudiocdn.com/@vercel/analytics@^1.5.0/",
+    "@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^5.1.1",
+    "vite": "https://aistudiocdn.com/vite@^7.2.4"
   }
 }
 </script>
