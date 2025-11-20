@@ -11,7 +11,7 @@ const WasatchHero = () => (
     <svg 
       viewBox="0 0 1440 400" 
       xmlns="http://www.w3.org/2000/svg" 
-      preserveAspectRatio="none" 
+      preserveAspectRatio="xMidYMax slice" 
       className="w-full h-full"
     >
       <defs>
