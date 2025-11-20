@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Zap, Users, ExternalLink, Calendar, Sparkles } from 'lucide-react';
+import { ArrowRight, Zap, Users, ExternalLink, Calendar } from 'lucide-react';
 import { Button, Card, SectionHeader, Badge } from '../components/ui';
 import { PROGRAMS, LINKS } from '../constants';
 import { Newsletter } from '../components/Newsletter';
@@ -132,25 +132,19 @@ const Home: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full mb-20 lg:mb-0">
           <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
             
-            {/* Tagline */}
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-grape/5 dark:bg-brand-grape/10 border border-brand-grape/20 text-brand-grape dark:text-brand-magenta text-sm font-medium mb-8 animate-fade-in delay-100 backdrop-blur-sm">
-              <Sparkles size={14} />
-              <span>Building the future in SLC</span>
-            </div>
-            
             {/* Main Headline */}
-            <h1 className="text-5xl sm:text-6xl md:text-8xl font-extrabold font-heading tracking-tight text-gray-900 dark:text-white leading-[1.1] mb-8 animate-fade-in delay-200 drop-shadow-sm">
+            <h1 className="text-5xl sm:text-6xl md:text-8xl font-extrabold font-heading tracking-tight text-gray-900 dark:text-white leading-[1.1] mb-8 animate-fade-in delay-100 drop-shadow-sm">
               Build, learn, and <br />
               <span className="text-shimmer">ship together.</span>
             </h1>
             
             {/* Subheadline */}
-            <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-10 leading-relaxed max-w-2xl mx-auto animate-fade-in delay-300">
+            <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-10 leading-relaxed max-w-2xl mx-auto animate-fade-in delay-200">
               The community for product builders in Salt Lake City. Connect with founders, engineers, and designers.
             </p>
             
             {/* CTAs */}
-            <div className="flex flex-col sm:flex-row justify-center gap-4 w-full sm:w-auto animate-fade-in delay-500">
+            <div className="flex flex-col sm:flex-row justify-center gap-4 w-full sm:w-auto animate-fade-in delay-300">
               <a href={LINKS.SLACK} target="_blank" rel="noreferrer" className="w-full sm:w-auto">
                 <Button size="lg" variant="white" className="w-full sm:w-auto border-gray-200 dark:border-gray-700 dark:bg-gray-800/80 dark:text-white dark:hover:bg-gray-800 backdrop-blur-sm">
                   Join Slack

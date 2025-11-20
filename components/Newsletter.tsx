@@ -13,7 +13,7 @@ export const Newsletter: React.FC = () => {
         </div>
         <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4 dark:text-white">Stay in the loop</h2>
         <p className="text-xl text-gray-600 dark:text-gray-300 mb-10 max-w-xl mx-auto">
-          Weekly updates on what's happening in the SLC product scene. No spam, ever.
+          Weekly updates on what's happening in the SLC product scene.
         </p>
         
         <form 
