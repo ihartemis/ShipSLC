@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Zap, Users, ExternalLink, Calendar, Sparkles } from 'lucide-react';
 import { Button, Card, SectionHeader, Badge } from '../components/ui';
 import { PROGRAMS, LINKS } from '../constants';
+import { Newsletter } from '../components/Newsletter';
 
 // Rugged "Wasatch" Style Mountain Graphic with Light Shift Animation
 const WasatchHero = () => (
@@ -91,15 +92,6 @@ const WasatchHero = () => (
 );
 
 const Home: React.FC = () => {
-  const [email, setEmail] = useState('');
-  const [subscribed, setSubscribed] = useState(false);
-
-  const handleSubscribe = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubscribed(true);
-    setTimeout(() => setSubscribed(false), 3000);
-  };
-
   return (
     <div className="flex flex-col w-full overflow-x-hidden">
       {/* HERO SECTION */}
@@ -237,33 +229,7 @@ const Home: React.FC = () => {
       </section>
 
       {/* NEWSLETTER */}
-      <section className="py-24 bg-white dark:bg-brand-dark relative">
-        <div className="absolute inset-0 bg-grid-slate-100 dark:bg-grid-slate-900 [mask-image:linear-gradient(to_top,white,transparent)] dark:[mask-image:linear-gradient(to_top,white,transparent)] pointer-events-none h-1/2 top-0"></div>
-        
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 animate-fade-in">
-          <div className="inline-flex p-4 rounded-2xl bg-brand-grape/10 text-brand-grape mb-8 animate-float">
-            <Calendar size={32} />
-          </div>
-          <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4 dark:text-white">Stay in the loop</h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 mb-10 max-w-xl mx-auto">
-            Weekly updates on what's happening in the SLC product scene. No spam, ever.
-          </p>
-          
-          <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto relative">
-            <input 
-              type="email" 
-              required
-              placeholder="Enter your email" 
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="flex-1 px-5 py-4 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 dark:text-white focus:ring-2 focus:ring-brand-grape focus:border-transparent outline-none shadow-sm transition-all"
-            />
-            <Button type="submit" size="lg" disabled={subscribed} className="shadow-lg shadow-brand-grape/20">
-              {subscribed ? 'Joined!' : 'Subscribe'}
-            </Button>
-          </form>
-        </div>
-      </section>
+      <Newsletter />
     </div>
   );
 };

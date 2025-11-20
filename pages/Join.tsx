@@ -2,11 +2,12 @@ import React from 'react';
 import { ExternalLink, Slack, Heart } from 'lucide-react';
 import { LINKS } from '../constants';
 import { SectionHeader, Card, Button } from '../components/ui';
+import { Newsletter } from '../components/Newsletter';
 
 const Join: React.FC = () => {
   return (
-    <div className="pt-10 pb-20">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="flex flex-col w-full">
+      <div className="pt-10 pb-20 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="text-center max-w-2xl mx-auto mb-16 animate-fade-in">
             <h1 className="text-4xl md:text-6xl font-extrabold font-heading tracking-tight text-gray-900 dark:text-white mb-6">
                 Ready to ship?
@@ -106,6 +107,7 @@ const Join: React.FC = () => {
             </div>
         </div>
       </div>
+      <Newsletter />
     </div>
   );
 };
