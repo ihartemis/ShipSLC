@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import Events from './pages/Events';
 import Join from './pages/Join';
 import About from './pages/About';
+import BrandAssets from './pages/BrandAssets';
 
 // Scroll to top on route change, or scroll to hash if present
 const ScrollToTop = () => {
@@ -39,6 +40,7 @@ const App: React.FC = () => {
             <Route path="/events" element={<Events />} />
             <Route path="/join" element={<Join />} />
             <Route path="/about" element={<About />} />
+            <Route path="/brand" element={<BrandAssets />} />
           </Routes>
         </main>
         <Footer />
